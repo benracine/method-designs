@@ -1,9 +1,12 @@
 # Django settings for method_designs project.
-
-### per heroku advice ###
+import os
 import dj_database_url
+
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+# Per heroku advice 
 DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
-### per heroku advice ###
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -111,6 +114,7 @@ ROOT_URLCONF = 'method_designs.urls'
 WSGI_APPLICATION = 'method_designs.wsgi.application'
 
 TEMPLATE_DIRS = (
+    os.path.join(PROJECT_ROOT, 'templates')
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -123,10 +127,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
 )
 
 # A sample logging configuration. The only tangible logging
