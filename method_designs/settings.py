@@ -64,8 +64,8 @@ MEDIA_ROOT = ''
 MEDIA_URL = ''
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'collected_static', 'static')
-STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, 'static'), )
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, 'static'), )
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
